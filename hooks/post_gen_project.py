@@ -11,7 +11,7 @@ SRC_DIR = Path("src")
 def install_immediately():
     venv.create("venv", with_pip=True)
     subprocess.run(
-        ". venv/bin/activate && pip install -e .[dev]",
+        ". venv/bin/activate && pip install -e '.[dev]'",
         shell=True,
         check=True,
     )
