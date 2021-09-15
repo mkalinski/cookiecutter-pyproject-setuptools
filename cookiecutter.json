@@ -5,6 +5,7 @@
     "python_requires": ">= 3.8, < 4",
     "python_src_root": "{{ cookiecutter.project_name | lower | replace(' ', '_') | replace('-', '_') }}",
     "project_type": ["package", "module"],
-    "install_immediately": ["yes", "no"],
-    "include_mypy": ["yes", "no"]
+    "include_mypy": ["yes", "no"],
+    "include_pylsp_plugins": ["yes", "no"],
+    "install_immediately": ["yes", "no"]
 }
