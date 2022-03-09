@@ -5,6 +5,7 @@ import venv
 
 INSTALL_IMMEDIATELY = "{{ cookiecutter.install_immediately }}" == "yes"
 IS_PYMODULE = "{{ cookiecutter.project_type }}" == "module"
+HAS_MYPY = "{{ cookiecutter.include_mypy }}" == "yes"
 SRC_DIR = Path("src")
 
 
@@ -25,6 +26,9 @@ def create_package():
     pkg_path = SRC_DIR / "{{ cookiecutter.python_src_root }}"
     pkg_path.mkdir()
     pkg_path.joinpath("__init__.py").touch()
+
+    if HAS_MYPY:
+        pkg_path.joinpath("py.typed").touch()
 
 
 if __name__ == '__main__':
